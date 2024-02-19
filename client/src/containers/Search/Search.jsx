@@ -9,14 +9,14 @@ import "./Search.css";
 
 export default function Search() {
   const dispatch = useDispatch();
-  let { name } = useParams()
+  let { name } = useParams();
 
   const searchVideogame = useSelector((state) => state.searchVideogameByName);
 
   useEffect(() => {
     dispatch(searchVideogames(name));
   }, [name]); // eslint-disable-line react-hooks/exhaustive-deps
-  
+
   // Paginacion
   function paginate(e, num) {
     e.preventDefault();
@@ -28,11 +28,14 @@ export default function Search() {
 
   let lastCardPerPage = page * videogamesPerPage;
   let firtsCardPerPage = lastCardPerPage - videogamesPerPage;
-  let currentPageGames = searchVideogame.slice(firtsCardPerPage, lastCardPerPage);
+  let currentPageGames = searchVideogame.slice(
+    firtsCardPerPage,
+    lastCardPerPage
+  );
 
   return (
     <div className="search">
-        {searchVideogame.length > 0 ?
+      {searchVideogame.length > 0 ? (
         <>
           <h1>Results with {name}!</h1>
           <Videogames videogames={currentPageGames} />
@@ -42,8 +45,9 @@ export default function Search() {
             paginate={paginate}
           />
         </>
-        : <NotFound image={"nogames"} />
-        }
+      ) : (
+        <NotFound image={"nogames"} />
+      )}
     </div>
-  )
-};
+  );
+}

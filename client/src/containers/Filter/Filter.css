@@ -1,31 +1,38 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
 
 .filter {
-    border-color: red;
-    display: flex;
-    width: 480px;
-    display: flex;
-    text-align: center;
-    justify-content:center;
-    font-family: 'Poppins', sans-serif;
+  border-color: red;
+  display: flex;
+  width: 480px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  font-family: "Poppins", sans-serif;
+  gap: 20px;
 }
 
 .filter div {
-    width: 160px;
+  width: 160px;
 }
 
 .filter select {
-    width: 145px;
-    border: 1px solid black;
-    border-radius: 10px;
-    background: none;
-    margin: 5px;
+  width: 145px;
+  border: 1px solid #aaaaaa;
+  border-radius: 10px;
+  margin: 5px;
+  height: 30px;
+  font-family: "Poppins", sans-serif;
+  background-color: #fcfbfc;
 }
 
 .filter select:hover {
-    background-color: rgb(56, 119, 255);
+  background-color: #edeae0;
 }
 
 .filter option {
-    background: none;
+  background: none;
+}
+
+.filterText {
+  font-weight: bold;
 }

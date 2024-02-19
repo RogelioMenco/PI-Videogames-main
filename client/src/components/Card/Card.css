@@ -1,70 +1,79 @@
-@import url('https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap");
 
 .card {
-	
-	border: 1px solid rgba(45, 0, 75, 0.489);
-	border-radius: 10px;
-	background-color: rgba(55, 0, 71, 0.09);
-	box-shadow: 2px 2px 40px rgba(31, 0, 66, 0.733);
-	width: 300px;
-	height: 250px;
-	margin-top: 5px;
-	margin-bottom: 5px;
-	display: flex;
-	flex-direction: column;
-	padding: 10px;
+  border: 1px solid rgba(10, 151, 161, 0.489);
+  border-radius: 10px;
+  background-color: rgba(10, 151, 161, 0.09);
+  box-shadow: 2px 2px 40px rgba(10, 151, 161, 0.733);
+  width: 300px;
+  height: 265x;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding: 10px;
+  text-align: start;
 }
 
 .gral {
-	
-	border: 1px solid rgb(160, 160, 160);
-	display: flex;
-	flex-direction: column;
-	width: 250px;
+  border: 1px solid rgb(160, 160, 160);
+  display: flex;
+  flex-direction: column;
+  width: 250px;
 }
+
 .textCard {
-	height: 80px;
-	display: flex;
-	align-items: center;
-	justify-content: space-evenly;
+  max-height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 .nameGenres {
-	width: 210px;
-	display: flex;
-	flex-direction: column;
-	align-items: flex-start;
+  flex-grow: 1;
+  flex-direction: column;
+  width: 210px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-wrap: nowrap;
+  text-overflow: ellipsis;
 }
 
 .name {
-	font-family: 'RocknRoll One', sans-serif;
-	display: flex;
-	align-items: flex-start;
-	
+  font-family: "RocknRoll One", sans-serif;
 }
 
 .img {
-	width: 100px;
-	height: 24vh;
-	width: 300px;
-	overflow: hidden;
-	border-radius: 10px 10px 0px 0px;
+  width: 100px;
+  height: 24vh;
+  width: 300px;
+  overflow: hidden;
+  border-radius: 10px;
 }
 
 .genres {
-	font-family: 'Poppins', sans-serif;
-	display: flex;
-	align-items: flex-start;
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  align-items: flex-start;
+}
+
+.divRatingWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .divRating {
-	color: whitesmoke;
-	border: 2px solid rgb(255, 232, 232);
-	background-color: rgba(34, 0, 93, 0.671);
-	height: 30px;
-	width: 30px;
-	border-radius: 100%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
+  color: whitesmoke;
+  border: 2px solid rgb(255, 232, 232);
+  background-color: rgba(34, 0, 93, 0.671);
+  height: 30px;
+  width: 30px;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "RocknRoll One", sans-serif;
+  font-size: 10px;
 }

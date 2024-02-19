@@ -1,24 +1,32 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
 
-.container{
-    height: 94vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    justify-content: space-evenly;
-    font-family: 'Poppins', sans-serif;
+.container {
+  height: 94vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: "Poppins", sans-serif;
+  padding-top: 40px;
 }
 
-.form{
-    border: 1px solid rgb(105, 129, 0);
-    border-radius: 20px;
-    height: 500px;
-    width: 650px;
-    background-color: rgba(255, 255, 255, 0.088);
-    padding: 5px;
-    margin-bottom: 120px;
-    box-shadow: 2px 2px 40px rgba(0, 0, 159, 0.68);
+.container h1 {
+  margin: 0px;
+}
+
+.container h3 {
+  margin: 0px;
+}
+
+.form {
+  margin-top: 30px;
+  border: 1px solid rgb(10, 151, 161);
+  border-radius: 20px;
+  height: 820px;
+  width: 650px;
+  background-color: rgba(255, 255, 255, 0.088);
+  padding: 5px;
+  box-shadow: 2px 2px 40px rgba(10, 151, 161, 0.68);
 }
 
 /* .divdiv{
@@ -26,68 +34,113 @@
     align-content: space-around;
 } */
 
-.divTitles{
-    display: flex;
-    flex-direction: row;
+.divTitles {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 10px 35px;
 }
 
-.label{
-    width: 145px;
-    border: 1px solid black;
-    border-radius: 10px;
-    background: none;
-    margin: 5px;
+.label {
+  width: 400px;
+  border: 1px solid grey;
+  border-radius: 5px;
+  margin: 5px;
+  height: 25px;
+  font: 14px sans-serif;
+  padding: 5px;
 }
 
-.label:hover{
-    cursor: pointer;
+.label:hover {
+  cursor: pointer;
 }
 
-.checkboxs{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    width: 650px;
-    margin-top: 30px;
-    margin-bottom: 30px;
+.checkboxs {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 650px;
+  margin-bottom: 30px;
+  gap: 5px;
 }
 
-.gendivs{
-    display: flex;
-    
+.gendivs {
+  display: flex;
+  flex-direction: column;
+  max-height: 150px;
+  flex-wrap: wrap;
+  gap: 5px;
 }
 
-.perro{
-    display: flex;
-    justify-content: space-evenly;
+.perro {
+  display: flex;
+  justify-content: space-evenly;
 }
 
-.checks{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
+.checks {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  /* align-items: center; */
+  /* align-content: center; */
 }
-
 
 .checks input:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
-.imagediv{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-}
-.imagein{
-    width: 300px;
-    border: 1px solid black;
-    border-radius: 10px;
-    background: none;
-    margin: 5px;
+.imagediv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
 }
 
+.imagein {
+  width: 300px;
+  border: 1px solid black;
+  border-radius: 10px;
+  background: none;
+  margin: 5px;
+}
+
+.inputLabel {
+  width: 150px;
+  display: inline-flex;
+  font-weight: 600;
+}
+
+.checkboxWrapper {
+  display: inline-flex;
+  justify-content: flex-start;
+  flex-direction: row;
+}
+
+.platformsWrapper {
+  display: flex;
+  flex-direction: column;
+  max-height: 100px;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.labelCenter {
+  display: inline-flex;
+  width: 100%;
+  justify-content: center;
+  margin: 15px 0px;
+  font-size: 20px;
+}
+
+.titlesWrapper {
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+
+.button {
+  padding: 8px 250px;
+  font-size: 24px !important;
+  border-radius: 10px !important;
+}

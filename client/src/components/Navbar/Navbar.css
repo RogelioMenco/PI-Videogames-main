@@ -1,47 +1,58 @@
-@import url('https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;1,500;1,700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;1,500;1,700&display=swap");
 
 .navBar {
-    width: 100%;
-    height: 5vh;
-    background: #100a1f;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  width: 100%;
+  height: 5vh;
+  background: #0a97a1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
 }
 
 .navBar div {
   width: 20%;
-  height: 90%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .navBar h3 {
-    text-decoration: none;
-    width: 55%;
-    height: 80%;
-    color:rgba(255, 255, 255, 255);
-    font-family: 'Ubuntu', sans-serif;
-    align-items: center;
-    justify-content: flex-start;
+  text-decoration: none;
+  width: 55%;
+  height: 80%;
+  color: rgba(255, 255, 255, 255);
+  font-family: "Ubuntu", sans-serif;
+  align-items: center;
+  justify-content: flex-start;
 }
 
-.videogames h3{
-  font-family: 'RocknRoll One', sans-serif;
+.videogames h3 {
+  font-family: "RocknRoll One", sans-serif;
 }
 
 .searchbar {
   display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  background-color: #fff;
+  border-radius: 15px;
 }
 
 .searchbar input {
-  height: 90%;
-  background-color: rgb(117, 117, 117);
   color: #000000;
   border-radius: 5px 0px 0px 5px;
   border: 1px solid white;
+  flex-grow: 1;
+  width: 90%;
+}
+
+.searchbar form {
+  width: 100%;
+  height: 100%;
+  display: flex;
 }
 
 .searchbar form button {
@@ -57,5 +68,5 @@
 
 .searchbar form button:hover {
   cursor: pointer;
-  text-shadow:  0 5px rgba(255, 255, 255, 0.719);
+  text-shadow: 0 5px rgba(255, 255, 255, 0.719);
 }

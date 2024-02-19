@@ -1,48 +1,180 @@
-.full{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding-top: 130px;
+.full {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-top: 30px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-top: 47px;
+  height: 91.9vh;
+  position: absolute;
+  overflow: hidden !important;
+  background-color: #000;
 }
 
-.info{
-    display: flex;
-    flex-direction: row;
+.info {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 60% 40%;
+  gap: 0px 0px;
+  grid-template-areas:
+    ". ."
+    ". .";
+  height: 600px;
+  margin: 10px 200px;
+  gap: 40px;
 }
 
 .image {
-    width: 50%;
-    height: 90%;
-    margin-left: 150px;
-}
-
-.image img {
-    width: 80%;
-}
-
-.details {
-    width: 50%;
-    margin-right: 150px;
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 120px;
+  height: 100%;
 }
 
 .button {
-    font-family: 'Bebas Neue', cursive;
-      color: rgb(79, 82, 255);
-      font-size: 120%;
-      border: solid 1px rgb(202, 202, 202);
-      border-radius:20px;
-      background:none;
-  }
-  
-  .button:hover {
-    transition: all 0.8s ease;
-    color: seashell;
-      background : rgb(79,82,255);
-      cursor: pointer;
-      font-size: 125%;
-      text-shadow: 0 0 5px rgb(255, 255, 255),
-  };
+  font-family: "Bebas Neue", cursive;
+  color: seashell;
+  /* background: rgb(16, 215, 230); */
+  font-size: 120%;
+  border: solid 1px rgb(202, 202, 202);
+  border-radius: 20px;
+  background: rgb(10, 151, 161);
+}
+
+.button:hover {
+  transition: all 0.8s ease;
+  color: seashell;
+  /* background: rgb(10, 151, 161); */
+  cursor: pointer;
+  font-size: 125%;
+  text-shadow: 0 0 5px rgb(255, 255, 255);
+  background: rgb(16, 215, 230);
+}
+
+.gameImage {
+  border-radius: 20px;
+  width: 100%;
+}
+
+.text .text p {
+  text-align: justify;
+}
+
+.titleWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 25px;
+}
+
+.titleWrapper h1 {
+  margin: 0;
+}
+
+.titleWrapper h5 {
+  margin: 0;
+}
+
+.sectionTitle {
+  font-weight: 600;
+  font-size: 24px;
+}
+
+.sectionList {
+  text-align: start;
+}
+
+.gameContainer {
+  display: flex;
+  gap: 30px;
+  margin-top: 30px;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 150px 80px;
+  color: white;
+}
+
+.detailsContainer h1 {
+  margin: 0;
+  text-align: start;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 40px;
+}
+
+.detailsContainer p {
+  text-align: start;
+}
+
+.detailsContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.subtitleData h4 {
+  margin: 0;
+}
+
+.subtitleData {
+  display: flex;
+  gap: 5px;
+  width: 100%;
+  justify-content: space-between;
+  padding-right: 50px;
+}
+
+.descriptionContainer {
+  display: inline-block;
+  text-align: justify;
+}
+
+.descriptionContainer p {
+  text-align: justify;
+}
+
+.seeMoreToggle {
+  color: grey;
+  cursor: pointer;
+}
+
+.categoryLabel {
+  margin-right: 5px;
+  font-weight: 600;
+}
+
+.star {
+  color: #f9a603;
+  padding-right: 40px;
+}
+
+.backButton {
+  padding: 8px 10px;
+}
+
+.backButtonWrapper {
+  width: 98%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: rgba(0, 0, 0, 0.2);
+  opacity: 0.4;
+}
+
+.contentWrapper {
+  position: relative;
+  z-index: 1;
+  overflow-y: auto;
+  height: 100%;
+}
