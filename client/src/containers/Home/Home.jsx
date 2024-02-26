@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { getVideogames, resetAll } from "../../actions/index";
-import Videogames from "../../components/Videogames/Videogames";
-import { Pagination } from "../../components/Pagination/Pagination";
-import { Filter } from "../Filter/Filter";
-import "./Home.css";
+import { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { getVideogames, resetAll } from '../../actions/index';
+import Videogames from '../../components/Videogames/Videogames';
+import { Pagination } from '../../components/Pagination/Pagination';
+import { Filter } from '../Filter/Filter';
+import './Home.css';
 
 export default function Home() {
   const dispatch = useDispatch();
@@ -21,7 +21,9 @@ export default function Home() {
 
   // Filtrado y Ordenado
   let allVideogames;
-  filterBy === "All" && orderBy === "Select" ? (allVideogames = videogames) : (allVideogames = filteredVideogames);
+  filterBy === 'All' && orderBy === 'Select'
+    ? (allVideogames = videogames)
+    : (allVideogames = filteredVideogames);
 
   // Paginacion
   function paginate(e, num) {
@@ -34,7 +36,9 @@ export default function Home() {
 
   let lastCardPerPage = page * videogamesPerPage;
   let firtsCardPerPage = lastCardPerPage - videogamesPerPage;
-  let currentPageGames = allVideogames.length ? allVideogames.slice(firtsCardPerPage, lastCardPerPage) : [];
+  let currentPageGames = allVideogames.length
+    ? allVideogames.slice(firtsCardPerPage, lastCardPerPage)
+    : [];
 
   return (
     <div className="home">

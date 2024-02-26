@@ -20,8 +20,8 @@
   grid-template-rows: 60% 40%;
   gap: 0px 0px;
   grid-template-areas:
-    ". ."
-    ". .";
+    '. .'
+    '. .';
   height: 600px;
   margin: 10px 200px;
   gap: 40px;
@@ -32,7 +32,7 @@
 }
 
 .button {
-  font-family: "Bebas Neue", cursive;
+  font-family: 'Bebas Neue', cursive;
   color: seashell;
   /* background: rgb(16, 215, 230); */
   font-size: 120%;

@@ -1,16 +1,18 @@
-require("dotenv").config();
-const { Router } = require("express");
-const axios = require("axios");
+require('dotenv').config();
+const { Router } = require('express');
+const axios = require('axios');
 const { API_KEY } = process.env;
 
-const { Videogame, Genre } = require("../db.js");
+const { Videogame, Genre } = require('../db.js');
 
 const router = Router();
 
 // Query -> name ? db + api : 100 primeros juegos
 
-router.get("/", async function (req, res) {
+router.get('/', async function (req, res) {
   const { name } = req.query;
+  let gamesDBFull;
+  let gamesAPIFull;
 
   try {
     if (name) {
@@ -25,46 +27,46 @@ router.get("/", async function (req, res) {
           name: X.name,
           image: X.image,
           rating: X.rating,
-          source: "Created",
-          genres: X.genres?.map((p) => p.name).join(", "),
+          source: 'Created',
+          genres: X.genres?.map((p) => p.name).join(', '),
         };
         let gamesAPI = await axios.get(
-          `https://api.rawg.io/api/games?search=${name}&key=${API_KEY}&page_size=15`
+          `https://api.rawg.io/api/games?search=${name}&key=${API_KEY}&page_size=15`,
         );
         gamesAPIFull = gamesAPI.data.results.map((X) => {
           var game = {
             id: X.id,
             name: X.name,
             rating: X.rating,
-            source: "Api",
+            source: 'Api',
             image: X.background_image,
             genres:
               X.genres &&
               X.genres
                 .map((p) => p.name)
                 .filter((p) => p != null)
-                .join(", "),
+                .join(', '),
           };
           return game;
         });
         res.json(gamesAPIFull.concat(gamesDBFull));
       } else {
         let gamesAPI = await axios.get(
-          `https://api.rawg.io/api/games?search=${name}&key=${API_KEY}&page_size=15`
+          `https://api.rawg.io/api/games?search=${name}&key=${API_KEY}&page_size=15`,
         );
         gamesAPIFull = gamesAPI.data.results.map((X) => {
           var game = {
             id: X.id,
             name: X.name,
             rating: X.rating,
-            source: "Api",
+            source: 'Api',
             image: X.background_image,
             genres:
               X.genres &&
               X.genres
                 .map((p) => p.name)
                 .filter((p) => p != null)
-                .join(", "),
+                .join(', '),
           };
           return game;
         });
@@ -82,8 +84,8 @@ router.get("/", async function (req, res) {
             genres: G.genres
               .map((gen) => gen.name)
               .filter((p) => p != null)
-              .join(", "),
-            source: "Api",
+              .join(', '),
+            source: 'Api',
             id: G.id,
             rating: G.rating,
           };
@@ -96,11 +98,11 @@ router.get("/", async function (req, res) {
       let dbGames = await Videogame.findAll({ include: [Genre] });
       let jsonGames = dbGames.map((J) => J.toJSON());
       jsonGames.forEach((C) => {
-        (C.source = "Created"),
+        (C.source = 'Created'),
           (C.genres = C.genres
             .map((genre) => genre.name)
             .filter((p) => p != null)
-            .join(", "));
+            .join(', '));
       });
       gamesResults = gamesResults.concat(jsonGames);
 

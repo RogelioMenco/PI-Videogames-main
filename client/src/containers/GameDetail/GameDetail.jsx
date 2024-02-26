@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { getVideogameById } from "../../actions/index";
-import NotFound from "../../components/NotFound/NotFound";
-import "./GameDetail.css";
+import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { getVideogameById } from '../../actions/index';
+import NotFound from '../../components/NotFound/NotFound';
+import './GameDetail.css';
 
 function GameDetail({ id }) {
   const dispatch = useDispatch();
@@ -19,7 +19,9 @@ function GameDetail({ id }) {
     dispatch(getVideogameById(id));
   }, [dispatch, id]);
 
-  const gameDescription = showMore ? videogame.description : `${videogame.description?.slice(0, 750)}...`;
+  const gameDescription = showMore
+    ? videogame.description
+    : `${videogame.description?.slice(0, 750)}...`;
 
   return (
     <div className="full">
@@ -41,9 +43,13 @@ function GameDetail({ id }) {
         <div className="gameContainer">
           <div className="image">
             {videogame.image === null || !videogame.image ? (
-              <NotFound image={"noimage"} />
+              <NotFound image={'noimage'} />
             ) : (
-              <img src={videogame.image} alt={videogame.name} className="gameImage" />
+              <img
+                src={videogame.image}
+                alt={videogame.name}
+                className="gameImage"
+              />
             )}
           </div>
 
@@ -63,7 +69,7 @@ function GameDetail({ id }) {
                 {gameDescription}
                 {!showMore && (
                   <span onClick={handleShowMore} className="seeMoreToggle">
-                    {" "}
+                    {' '}
                     Ver mas
                   </span>
                 )}

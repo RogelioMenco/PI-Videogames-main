@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
-import { useParams } from "react-router";
-import { useDispatch, useSelector } from "react-redux";
-import { searchVideogames } from "../../actions/index";
-import Videogames from "../../components/Videogames/Videogames";
-import { Pagination } from "../../components/Pagination/Pagination";
-import NotFound from "../../components/NotFound/NotFound";
-import "./Search.css";
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router';
+import { useDispatch, useSelector } from 'react-redux';
+import { searchVideogames } from '../../actions/index';
+import Videogames from '../../components/Videogames/Videogames';
+import { Pagination } from '../../components/Pagination/Pagination';
+import NotFound from '../../components/NotFound/NotFound';
+import './Search.css';
 
 export default function Search() {
   const dispatch = useDispatch();
@@ -30,7 +30,7 @@ export default function Search() {
   let firtsCardPerPage = lastCardPerPage - videogamesPerPage;
   let currentPageGames = searchVideogame.slice(
     firtsCardPerPage,
-    lastCardPerPage
+    lastCardPerPage,
   );
 
   return (
@@ -46,7 +46,7 @@ export default function Search() {
           />
         </>
       ) : (
-        <NotFound image={"nogames"} />
+        <NotFound image={'nogames'} />
       )}
     </div>
   );

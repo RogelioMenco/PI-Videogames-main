@@ -1,7 +1,13 @@
-import React, { useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { getGenres, filterByGenre, orderByCreator, orderAsc, orderDesc } from "../../actions/index";
-import "./Filter.css";
+import { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import {
+  getGenres,
+  filterByGenre,
+  orderByCreator,
+  orderAsc,
+  orderDesc,
+} from '../../actions/index';
+import './Filter.css';
 
 export function Filter({ paginate }) {
   const dispatch = useDispatch();
@@ -19,9 +25,12 @@ export function Filter({ paginate }) {
 
   // Ordenado
   const handleOrder = (e) => {
-    if (e.target.value === "asc_name" || e.target.value === "asc_rating") {
+    if (e.target.value === 'asc_name' || e.target.value === 'asc_rating') {
       dispatch(orderAsc(e.target.value));
-    } else if (e.target.value === "desc_name" || e.target.value === "desc_rating") {
+    } else if (
+      e.target.value === 'desc_name' ||
+      e.target.value === 'desc_rating'
+    ) {
       dispatch(orderDesc(e.target.value));
     } else {
       dispatch(filterByGenre(e.target.value));
@@ -30,7 +39,7 @@ export function Filter({ paginate }) {
 
   // Filtrado por API/DB
   const handleCreator = (e) => {
-    if (e.target.value === "Api" || e.target.value === "Created") {
+    if (e.target.value === 'Api' || e.target.value === 'Created') {
       dispatch(orderByCreator(e.target.value));
       paginate(e, 1);
     } else {
@@ -45,7 +54,12 @@ export function Filter({ paginate }) {
         <span className="filterText">Filtrado por Genero</span>
         <select onChange={(e) => handleFilter(e)}>
           <option default>Todos</option>
-          {genres.length && genres?.map((G) => <option value={G.name}>{G.name}</option>)}
+          {genres.length &&
+            genres?.map((G, i) => (
+              <option key={i} value={G.name}>
+                {G.name}
+              </option>
+            ))}
         </select>
       </div>
       <div>

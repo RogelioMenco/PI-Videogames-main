@@ -1,11 +1,11 @@
-const { Videogame, conn } = require('../../src/db.js');
-const { expect } = require('chai');
+const { Videogame, Recipe, conn } = require('../../src/db.js');
 
 describe('Videogame model', () => {
-  before(() => conn.authenticate()
-    .catch((err) => {
-      console.error('Unable to connect to the database:', err);
-    }));
+  before(() =>
+    conn.authenticate().catch((err) => {
+      throw new Error('Unable to connect to the database:', err);
+    }),
+  );
   describe('Validators', () => {
     beforeEach(() => Videogame.sync({ force: true }));
     describe('name', () => {

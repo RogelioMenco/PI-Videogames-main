@@ -1,13 +1,13 @@
-import React, { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
-import "./Navbar.css";
+import { useState } from 'react';
+import { Link, NavLink } from 'react-router-dom';
+import './Navbar.css';
 
 function NavBar() {
-  const [name, setName] = useState("");
+  const [name, setName] = useState('');
 
   function handleSubmit(e) {
     e.preventDefault();
-    setName("");
+    setName('');
   }
 
   return (
@@ -24,7 +24,12 @@ function NavBar() {
       </div>
       <div className="searchbar">
         <form onSubmit={(e) => handleSubmit(e)}>
-          <input value={name} onChange={(e) => setName(e.target.value)} placeholder="Buscar por nombre" type="text"></input>
+          <input
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            placeholder="Buscar por nombre"
+            type="text"
+          ></input>
           <NavLink to={`/results/${name}`}>
             <button name="name" type="submit">
               Buscar

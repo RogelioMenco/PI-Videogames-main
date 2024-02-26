@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 
 .filter {
   border-color: red;
@@ -7,7 +7,7 @@
   display: flex;
   text-align: center;
   justify-content: center;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   gap: 20px;
 }
 
@@ -21,7 +21,7 @@
   border-radius: 10px;
   margin: 5px;
   height: 30px;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   background-color: #fcfbfc;
 }
 

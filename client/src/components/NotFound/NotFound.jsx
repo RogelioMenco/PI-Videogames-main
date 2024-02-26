@@ -1,9 +1,7 @@
-import React from "react";
-
 export default function NotFound({ image }) {
   return (
     <div>
-      {image === "noimage" ? (
+      {image === 'noimage' ? (
         <img
           className="img"
           src="https://acortar.link/e4iUP"

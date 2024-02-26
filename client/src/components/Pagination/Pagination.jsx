@@ -1,7 +1,11 @@
-import React from "react";
-import "./Pagination.css";
+import './Pagination.css';
 
-export const Pagination = ({ videogamesPerPage, totalVideogames, paginate, total }) => {
+export const Pagination = ({
+  videogamesPerPage,
+  totalVideogames,
+  paginate,
+  total,
+}) => {
   const pageNumbers = [];
   const numOfPages = Math.ceil(totalVideogames / videogamesPerPage);
 
@@ -21,7 +25,7 @@ export const Pagination = ({ videogamesPerPage, totalVideogames, paginate, total
         </div>
       </nav>
       <div className="totalCount">
-        <p style={{ color: "white" }}>Total videojuegos: {total}</p>
+        <p style={{ color: 'white' }}>Total videojuegos: {total}</p>
       </div>
     </>
   );

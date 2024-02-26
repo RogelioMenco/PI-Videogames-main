@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap');
 
 .card {
   border: 1px solid rgba(10, 151, 161, 0.489);
@@ -41,7 +41,7 @@
 }
 
 .name {
-  font-family: "RocknRoll One", sans-serif;
+  font-family: 'RocknRoll One', sans-serif;
 }
 
 .img {
@@ -53,7 +53,7 @@
 }
 
 .genres {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   display: flex;
   align-items: flex-start;
 }
@@ -74,6 +74,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: "RocknRoll One", sans-serif;
+  font-family: 'RocknRoll One', sans-serif;
   font-size: 10px;
 }

@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { createVideogame, getGenres } from "../../actions/index";
-import "./Create.css";
+import { useState, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { createVideogame, getGenres } from '../../actions/index';
+import './Create.css';
 
 export default function Create() {
   const dispatch = useDispatch();
@@ -10,10 +10,10 @@ export default function Create() {
   const genres2 = genres.slice(10, 20);
 
   const [game, setGame] = useState({
-    name: "",
-    description: "",
-    image: "",
-    released: "",
+    name: '',
+    description: '',
+    image: '',
+    released: '',
     rating: null,
     genres: [],
     platforms: [],
@@ -23,18 +23,27 @@ export default function Create() {
     dispatch(getGenres());
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
-  const randomPlatforms = ["PC", "iOS", "Android", "macOS", "PlayStation 4", "PlayStation 5", "Xbox", "PS Vita"];
+  const randomPlatforms = [
+    'PC',
+    'iOS',
+    'Android',
+    'macOS',
+    'PlayStation 4',
+    'PlayStation 5',
+    'Xbox',
+    'PS Vita',
+  ];
 
   const ChangeInput = (e) => {
-    if (e.target.name === "rating") {
+    if (e.target.name === 'rating') {
       const num = parseInt(e.target.value);
       if (num > 5 || num < 1) {
-        alert("Ingrese un numero valido");
+        alert('Ingrese un numero valido');
         return;
       }
     }
 
-    if (e.target.name === "genres" || e.target.name === "platforms") {
+    if (e.target.name === 'genres' || e.target.name === 'platforms') {
       const arr = game[e.target.name];
       setGame({
         ...game,
@@ -42,11 +51,11 @@ export default function Create() {
       });
     }
     //utilice un reject que simplemente me deje utilizar solo letras y numeros mas no otros simbolos
-    else if (e.target.name === "name") {
+    else if (e.target.name === 'name') {
       console.log(e.target.value);
       setGame({
         ...game,
-        [e.target.name]: e.target.value?.replace(/[^a-zA-Z0-9 ]/g, ""),
+        [e.target.name]: e.target.value?.replace(/[^a-zA-Z0-9 ]/g, ''),
       });
     } else {
       setGame({
@@ -65,7 +74,7 @@ export default function Create() {
 
       // Asigna los listeners del objeto respectivamente, error, la promesa falla, cargo, se resuleve normal
       img.onload = () => resolve();
-      img.onerror = () => reject("No hay imagen!");
+      img.onerror = () => reject('No hay imagen!');
     });
   };
 
@@ -86,36 +95,36 @@ export default function Create() {
     try {
       await checkForImage(obj.image);
     } catch (error) {
-      alert("La imagen ingresada no es valida!");
+      alert('La imagen ingresada no es valida!');
       return;
     }
     if (!obj.name) {
-      alert("Hey! falta el nombre.");
+      alert('Hey! falta el nombre.');
       return;
     }
     if (!obj.description) {
-      alert("Hey! aun falta la descripcion.");
+      alert('Hey! aun falta la descripcion.');
       return;
     }
     if (!obj.released) {
-      alert("Hey! falta la fecha de lanzamiento.");
+      alert('Hey! falta la fecha de lanzamiento.');
       return;
     }
     if (obj.rating > 5 || obj.rating < 0) {
-      alert("Hey! el rating debe estar entre 0 and 5.");
+      alert('Hey! el rating debe estar entre 0 and 5.');
       return;
     }
 
     dispatch(createVideogame(obj));
     e.target.reset();
-    alert("Videogame creado correctamente !");
+    alert('Videogame creado correctamente !');
     /* dispatch(getVideogames()) */
 
     setGame({
-      name: "",
-      description: "",
-      image: "",
-      released: "",
+      name: '',
+      description: '',
+      image: '',
+      released: '',
       rating: 0,
       genres: [],
       platforms: [],
@@ -124,7 +133,13 @@ export default function Create() {
 
   return (
     <div className="container">
-      <form id="survey-form" className="form" noValidate onChange={(e) => ChangeInput(e)} onSubmit={(e) => handleSubmit(e)}>
+      <form
+        id="survey-form"
+        className="form"
+        noValidate
+        onChange={(e) => ChangeInput(e)}
+        onSubmit={(e) => handleSubmit(e)}
+      >
         <div>
           <div>
             <div className="titlesWrapper">
@@ -134,23 +149,51 @@ export default function Create() {
             <div className="divTitles">
               <div>
                 <label className="inputLabel">Nombre:</label>
-                <input className="label" type="text" name="name" value={game.name}></input>
+                <input
+                  className="label"
+                  type="text"
+                  name="name"
+                  value={game.name}
+                ></input>
               </div>
               <div>
                 <label className="inputLabel">Descripción:</label>
-                <input className="label" type="text" name="description" value={game.description}></input>
+                <input
+                  className="label"
+                  type="text"
+                  name="description"
+                  value={game.description}
+                ></input>
               </div>
               <div>
                 <label className="inputLabel">Lanzamiento:</label>
-                <input className="label" type="date" name="released" value={game.released}></input>
+                <input
+                  className="label"
+                  type="date"
+                  name="released"
+                  value={game.released}
+                ></input>
               </div>
               <div>
                 <label className="inputLabel">Rating:</label>
-                <input className="label" type="number" name="rating" step="1" min="1" max="5" value={game.rating}></input>
+                <input
+                  className="label"
+                  type="number"
+                  name="rating"
+                  step="1"
+                  min="1"
+                  max="5"
+                  value={game.rating}
+                ></input>
               </div>
               <div className="imagedisv">
                 <label className="inputLabel">URL de la imagen:</label>
-                <input className="label" type="text" name="image" value={game.image}></input>
+                <input
+                  className="label"
+                  type="text"
+                  name="image"
+                  value={game.image}
+                ></input>
               </div>
             </div>
           </div>
@@ -160,14 +203,22 @@ export default function Create() {
               <div className="gendivs">
                 {genres1.map((gen, i) => (
                   <div key={i} className="checkboxWrapper">
-                    <input type="checkbox" name="genres" value={gen.name}></input>
+                    <input
+                      type="checkbox"
+                      name="genres"
+                      value={gen.name}
+                    ></input>
                     <label name={gen}>{gen.name}</label>
                   </div>
                 ))}
 
                 {genres2.map((gen, i) => (
                   <div key={i} className="checkboxWrapper">
-                    <input type="checkbox" name="genres" value={gen.name}></input>
+                    <input
+                      type="checkbox"
+                      name="genres"
+                      value={gen.name}
+                    ></input>
                     <label name={gen}>{gen.name}</label>
                   </div>
                 ))}
