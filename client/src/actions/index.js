@@ -1,6 +1,8 @@
+const API_URL = process.env.REACT_APP_API_URL ?? 'http://localhost:3001';
+
 export function getVideogames() {
   return function (dispatch) {
-    return fetch(`http://localhost:3001/videogames`)
+    return fetch(`${API_URL}/videogames`)
       .then((response) => response.json())
       .then((json) => {
         dispatch({ type: 'GET_VIDEOGAMES', payload: json });
@@ -10,7 +12,7 @@ export function getVideogames() {
 
 export function searchVideogames(name) {
   return (dispatch) =>
-    fetch(`http://localhost:3001/videogames?name=${name}`)
+    fetch(`${API_URL}/videogames?name=${name}`)
       .then((resp) => resp.json())
       .then((json) => {
         dispatch({
@@ -22,7 +24,7 @@ export function searchVideogames(name) {
 
 export function getVideogameById(id) {
   return (dispatch) =>
-    fetch(`http://localhost:3001/videogame/${id}`)
+    fetch(`${API_URL}/videogame/${id}`)
       .then((resp) => resp.json())
       .then((json) => {
         dispatch({
@@ -34,7 +36,7 @@ export function getVideogameById(id) {
 
 export function getGenres() {
   return (dispatch) =>
-    fetch(`http://localhost:3001/genres`)
+    fetch(`${API_URL}/genres`)
       .then((resp) => resp.json())
       .then((json) => {
         dispatch({
@@ -46,7 +48,7 @@ export function getGenres() {
 
 export function createVideogame(obj) {
   return (dispatch) =>
-    fetch('http://localhost:3001/videogame', {
+    fetch(`${API_URL}/videogame`, {
       method: 'POST',
       headers: {
         Accept: 'application/json',

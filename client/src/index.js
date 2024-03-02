@@ -5,14 +5,16 @@ import { Provider } from 'react-redux';
 import store from './Store/index';
 import './index.css';
 
-// eslint-disable-next-line react/no-deprecated
-ReactDOM.render(
+const basePath = process.env.PUBLIC_URL ?? '/';
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+
+root.render(
   <Provider store={store}>
-    <BrowserRouter>
+    <BrowserRouter basename={basePath}>
       <App />
     </BrowserRouter>
   </Provider>,
-  document.getElementById('root'),
 );
 
 // If you want to start measuring performance in your app, pass a function
