@@ -2,32 +2,30 @@
 
 Para iniciar el proyecto deben seguirse los siguientes pasos
 
-1. Instalar dependencias para client y server
+1. Instalar dependencias para client y server usando `yarn`
 
 ```
-cd api
-npm install
-```
-
-```
-cd client
-npm install
+yarn install
 ```
 
 3. Desde la raiz del directiorio del proyecto, ejecutar `docker compose up -d` para la creacion de la base de datos
-4. Crear los archivos `.env` para client y server siguiendo los `.env.example`
-5. Para iniciar la API
+4. Crear los archivos `.env` para client y api siguiendo los `.env.example`
+5. Para iniciar el proyecto
 
 ```
-cd server
-npm start
+yarn start
 ```
 
-6. Para ejecutar el client
+6. En caso de requerir iniciar unicamente la API, se ejecuta el siguiente comando
 
 ```
-cd client
-npm run dev
+yarn start:api
 ```
 
-7. Por defecto client estara en el puerto `5173` y la API en `4000`
+7. En caso de requerir iniciar unicamente el client, se ejecuta el siguiente comando
+
+```
+yarn start:client
+```
+
+8. Por defecto client estara en el puerto `3000` y la API en `3001`
